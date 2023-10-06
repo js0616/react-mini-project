@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: rgb(33, 37, 41);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-item {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.banner {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ::before : 가상선택자 - 존재하지 않는 요소를 존재하는 요소처럼 보여지게 하는 선택자 */
+.banner::before {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  /* 내용 */
+  content: "";
+  background: linear-gradient(to left, black, transparent);
+}
+
+.banner-info {
+  width: 40%;
+  margin-left: 40px;
+  z-index: 1;
+}
+
+/*  */
+.slide-title{
+  text-align:  center;
+  font-size: 30px;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+/* movie-card */
+
+.overlay{
+  background-color: rgba(0,0,0,0.5);
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  padding-left: 20px;
+}
+
+.movie-card:hover .overlay{
+  opacity: 1;
+}
+
+.movie-card .overlay .genres , .info{
+  display: flex;
+  gap : 2%;
+}
+
+.genres{
+  font-size: 20px;
+}
+
+.movie-card a {
+  text-decoration: none;
+  color: white;
+}
+
+
+/* detail */
+.detail-box{
+  display: flex;
+  background-color: black;
+  padding:5%;
+}
+
+.detail-img{
+  width: 400px;
+  height: 600px;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  background-size: 100%;
+  margin-left: 10%;
+}
+.detail-info{
+  width: 45%;
+  margin-top: 5%;
+  padding-left: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail-gen {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-title{
+  font-size: 36px
+}
+
+.detail-etc{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid white;
+}
+
+.detail-overview{
+  padding-bottom: 20px;
+  border-bottom: 3px solid white;
+}
+
+
+/* review */
+.review-con{
+  margin: 1%;
+  
+  border: 3px solid lightgray;
+  background-color: black;
+  padding: 30px;
+}
+.review-author{
+  border-bottom: 1px solid lightgray;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  
+}
+
+.review-content{
+  color: lightgray;
+  margin-bottom: 15px;
+  
+}
+
+
+/* Movies */
+
+.movie-filter{
+  display: flex;
+}
+
+.movie-list{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+/* moviecopy */
+.movie-card-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
